@@ -1,0 +1,41 @@
+
+<html>
+<meta http-equiv="refresh" content="2" />
+<body>
+
+	<table id="values">
+		<tr><th>Name</th><th>Price</th></tr>
+	</table>
+	<p id="tickr"></p>
+</body>
+<style>
+#values{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+td{
+	padding: 1.2em;
+}
+	tr:nth-child(even){
+		background-color: #bbb;
+	}
+	tr:nth-child(odd){
+		background-color: #ddd;
+	}
+</style>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	hello="";
+	$.getJSON("https://coindelta.com/api/v1/public/getticker/",function(out){
+		for (i=0;i<out.length;i++){
+			if(out[i].MarketName.search("-inr")>-1){
+				name=out[i].MarketName.split('-')[0].toUpperCase();
+				$('table').append("<tr><td>"+name+"</td><td>"+out[i].Last+" INR</td></tr>");
+			}
+		}
+	});
+
+</script>
