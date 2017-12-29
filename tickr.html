@@ -1,43 +1,57 @@
-
 <html>
 	<head>
 		<title>Tickr</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-<meta http-equiv="refresh" content="2" />
-<body>
-
-	<table id="values">
-		<tr><th>Name</th><th>Price</th></tr>
-	</table>
-	<p id="tickr"></p>
-</body>
-<style>
-#values{
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-	tbody{
-		width:100%;
+	<meta http-equiv="refresh" content="2" />
+	<body>
+		<table id="values">
+			<tr><th>Name</th><th>Price</th></tr>
+		</table>
+		<p id="tickr"></p>
+	</body>
+	<style>
+	#values{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
 	}
-td{
-	padding: 1.2em;
-}
-	tr:nth-child(even){
-		background-color: #bbb;
+		tbody{
+			width:100%;
+		}
+		tr{
+			width: 100%;
+		}
+	td,th{
+		padding: 1.2em;
 	}
-	td:nth-child(even){
-		width:50%;
-	}
-	td:nth-child(odd){
-		width:50%;
-	}
-	tr:nth-child(odd){
-		background-color: #ddd;
-	}
-</style>
-
+		tr:nth-child(even){
+			background-color: #bbb;
+			
+		}
+		tr:nth-child(odd){
+			background-color: #ddd;
+		}
+		td:nth-child(even){
+			width:50vw;
+			text-align: left;
+		}
+		td:nth-child(odd){
+			width:50vw;
+			text-align: right;
+			align-content: center;
+		}
+		
+		th:nth-child(even){
+			width:50vw;
+			text-align: left;
+		}
+		th:nth-child(odd){
+			width:50vw;
+			text-align: right;
+		}
+		
+	</style>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -50,5 +64,4 @@ td{
 			}
 		}
 	});
-
 </script>
